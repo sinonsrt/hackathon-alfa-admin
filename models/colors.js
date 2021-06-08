@@ -11,7 +11,7 @@ module.exports = (Sequelize, DataType) => {
           autoIncrement:true,
           type:DataType.INTEGER
         },
-        cor: {
+        cor:{
           allowNull:false,
           type:DataType.STRING(50)
         },
