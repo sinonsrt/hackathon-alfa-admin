@@ -10,6 +10,10 @@ const cadastroUsersRouter= require('./routes/cadastroUsers')
 const cadastroBrandRouter= require('./routes/cadastroBrand')
 const cadastroColorsRouter= require('./routes/cadastroColors')
 const cadastroVehiclesRouter= require('./routes/cadastroVehicles')
+const saveUserRouter = require('./routes/saveUsers')
+const saveBrandRouter = require('./routes/saveBrand')
+const saveColorsRouter = require('./routes/saveColors')
+const saveVehiclesRouter = require('./routes/saveVehicles')
 
 const app = express();
 
@@ -19,7 +23,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap')));
@@ -31,6 +35,10 @@ app.use('/cadastroUsers', cadastroUsersRouter);
 app.use('/cadastroBrand', cadastroBrandRouter);
 app.use('/cadastroColors', cadastroColorsRouter);
 app.use('/cadastroVehicles', cadastroVehiclesRouter);
+app.use('/saveUsers', saveUserRouter)
+app.use('/saveBrand', saveBrandRouter)
+app.use('/saveColors', saveColorsRouter)
+app.use('/saveVehicles', saveVehiclesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
