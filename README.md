@@ -1,1 +1,1 @@
-# hackathon-alfa
+# hackathon-alfa-admin
