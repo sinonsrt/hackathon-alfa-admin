@@ -9,11 +9,11 @@ module.exports = (Sequelize, DataType) => {
           allowNull:false,
           primaryKey:true,
           autoIncrement:true,
-          type:Sequelize.INTEGER
+          type:DataType.INTEGER
         },
         cor: {
           allowNull:false,
-          type:Sequelize.STRING(50)
+          type:DataType.STRING(50)
         },
     })
     return Colors
