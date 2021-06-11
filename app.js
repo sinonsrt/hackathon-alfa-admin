@@ -15,6 +15,7 @@ const saveBrandRouter = require('./routes/saveBrand')
 const saveColorsRouter = require('./routes/saveColors')
 const saveVehiclesRouter = require('./routes/saveVehicles')
 const loginRouter = require('./routes/login')
+const registerRouter = require('./routes/register')
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use('/saveBrand', saveBrandRouter)
 app.use('/saveColors', saveColorsRouter)
 app.use('/saveVehicles', saveVehiclesRouter)
 app.use('/login', loginRouter)
+app.use('/register', registerRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
