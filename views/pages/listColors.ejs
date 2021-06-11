@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include ../layouts/header %>
+</head>
+
+<body>
+    <%- include ../layouts/navbar %>
+
+    <div class="container">
+        <table class="table">
+            <h1 class="text-center">Cores</h1>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let d of data) {%>
+                <tr>
+                    <th scope="row"><%= d.id %></th>
+                    <td><%= d.cor %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <%- include ../layouts/footer %>
+</body>
+</html>
