@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Cores</title>
-</head>
+    <%- include ../layouts/header %></head>
 <body>    
+    <%- include ../layouts/navbar %>
     <div class="container mt-5">
+        <h1 class="text-center"> Cadastro de Cores </h1>
         <form method="POST" action="/saveColors">
             <div class="row">
-                <div class="form-group col-8">
+                <div class="form-group col-8 mb-3">
                     <label class="form-labbel">Cor:</label>
                     <input type="text" class="form-control" name="cor">
                 </div>
-                <div class="rol-8">
+                <div class="rol-8 form-group col-8 mb-3">
                     <button type="submit" class="btn btn-success float-end">Salvar</button>
                 </div>
             </div>
         </form>
     </div>
-</body>
+    <%- include ../layouts/footer %></body>
 </html>

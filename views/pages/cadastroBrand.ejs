@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ../layouts/header %></head>
+<body>
+    <%- include ../layouts/navbar %>
+    <div class="container mt-5">
+        <h1 class="text-center"> Cadastro de Marcas </h1>
+        <form method="POST" action="/saveBrand">
+            <div class="row">
+                <div class="form-group col-8 mb-3">
+                    <label class="form-labbel">Marca:</label>
+                    <input type="text" class="form-control" name="marca">
+                </div>
+                <div class="rol-8 form-group col-8 mb-3">
+                    <button type="submit" class="btn btn-success float-end">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <%- include ../layouts/footer %></body>
+</html>
