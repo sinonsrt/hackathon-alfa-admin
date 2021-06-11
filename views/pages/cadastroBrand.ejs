@@ -5,15 +5,19 @@
 <body>
     <%- include ../layouts/navbar %>
     <div class="container mt-5">
+        <div class="rol-8 form-group col-12">
+            <a href="listBrand" class="btn btn-dark float-end">Marcas Cadastradas</a>
+        </div>
         <h1 class="text-center"> Cadastro de Marcas </h1>
         <form method="POST" action="/saveBrand">
             <div class="row">
-                <div class="form-group col-8 mb-3">
+                <div class="form-group col-12 mb-3">
                     <label class="form-labbel">Marca:</label>
                     <input type="text" class="form-control" name="marca">
                 </div>
-                <div class="rol-8 form-group col-8 mb-3">
+                <div class="rol-8 form-group col-12 mb-3">
                     <button type="submit" class="btn btn-success float-end">Salvar</button>
+                    <button type="reset" class="btn btn-danger float-end">Cancelar</button>
                 </div>
             </div>
         </form>
