@@ -1,10 +1,8 @@
-const {
-    Sequelize,
-    DataType
-} = require("sequelize");
+const { Sequelize, DataType } = require('sequelize');
 
 module.exports = (Sequelize, DataType) => {
-    const Vehicles = Sequelize.define('vehicles', {
+    
+  const Vehicles = Sequelize.define('Vehicles', {
         id:{
           allowNull:false,
           primaryKey:true,
@@ -17,11 +15,11 @@ module.exports = (Sequelize, DataType) => {
         },
         anomodelo: {
           allowNull:false,
-          type:DataType.DATE
+          type:DataType.STRING(10)
         },
         anofabricacao:{
           allowNull:false,
-          type:DataType.DATE
+          type:DataType.STRING(10)
         }, 
         valor:{
           allowNull:false,
@@ -33,9 +31,13 @@ module.exports = (Sequelize, DataType) => {
           values: ['Novo', 'Semi-novo'],
           defaultValue: 'NOVO'
         }, 
-        fotoDestaque:{
-          allowNull:false,
-          type:DataType.STRING(50)
+        foto:{
+          allowNull:true,
+          type:DataType.STRING(100)
+        },
+        destaque:{
+          allowNull:true,
+          type:DataType.BOOLEAN,
         }, 
         marca_id:{
           allowNull:false,
@@ -53,9 +55,10 @@ module.exports = (Sequelize, DataType) => {
           refereces: { model: 'users', key: 'id'}
         },
         opcionais:{
-          allowNull:false,
+          allowNull:true,
           type:DataType.TEXT
         },
     })
+
     return Vehicles
 }

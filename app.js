@@ -21,6 +21,8 @@ const listVehiclesRouter = require('./routes/listVehicles')
 const listColorsRouter = require('./routes/listColors')
 const listBrandRouter = require('./routes/listBrand')
 
+const vehiclesRoutes = require('./routes/vehicleRoutes');
+
 const app = express();
 
 // view engine setup
@@ -51,6 +53,9 @@ app.use('/listUsers', listUsersRouter)
 app.use('/listVehicles', listVehiclesRouter)
 app.use('/listColors', listColorsRouter)
 app.use('/listBrand', listBrandRouter)
+
+// rotas refatoradas
+app.use('/veiculos', vehiclesRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

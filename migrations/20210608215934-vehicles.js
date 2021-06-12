@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('vehicles', {
+    return queryInterface.createTable('Vehicles', {
       id:{
         allowNull:false,
         primaryKey:true,
@@ -31,9 +31,9 @@ module.exports = {
         values: ['Novo', 'Semi-novo'],
         defaultValue: 'NOVO'
       }, 
-      fotoDestaque:{
-        allowNull:false,
-        type:Sequelize.STRING(50)
+      foto:{
+        allowNull:true,
+        type:Sequelize.STRING(200)
       }, 
       destaque:{
         allowNull:true,
@@ -42,30 +42,30 @@ module.exports = {
       marca_id:{
         allowNull:false,
         type:Sequelize.INTEGER,
-        references: { model: 'brands', key: 'id'}
+        references: { model: 'Brands', key: 'id'}
       },
       cor_id:{
         allowNull:false,
         type:Sequelize.INTEGER,
-        references: { model: 'colors', key: 'id'}
+        references: { model: 'Colors', key: 'id'}
       },
       usuario_id:{
         allowNull:false,
         type:Sequelize.INTEGER,
-        references: { model: 'users', key: 'id'}
+        references: { model: 'Users', key: 'id'}
       },
       opcionais:{
         allowNull:true,
         type:Sequelize.TEXT
       },
-      createdAt:{
-        allowNull:false,
-        type:Sequelize.DATE
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       },
-      updatedAt:{
-        allowNull:false,
-        type:Sequelize.DATE
-      }
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
     })
   },
 
