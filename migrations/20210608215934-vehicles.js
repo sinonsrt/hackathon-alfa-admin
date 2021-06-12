@@ -15,11 +15,11 @@ module.exports = {
       },
       anomodelo: {
         allowNull:false,
-        type:Sequelize.DATE
+        type:Sequelize.STRING(10)
       },
       anofabricacao:{
         allowNull:false,
-        type:Sequelize.DATE
+        type:Sequelize.STRING(10)
       }, 
       valor:{
         allowNull:false,
@@ -35,6 +35,10 @@ module.exports = {
         allowNull:false,
         type:Sequelize.STRING(50)
       }, 
+      destaque:{
+        allowNull:true,
+        type:Sequelize.BOOLEAN,
+      },
       marca_id:{
         allowNull:false,
         type:Sequelize.INTEGER,
@@ -51,7 +55,7 @@ module.exports = {
         references: { model: 'users', key: 'id'}
       },
       opcionais:{
-        allowNull:false,
+        allowNull:true,
         type:Sequelize.TEXT
       },
       createdAt:{
