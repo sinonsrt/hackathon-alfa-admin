@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const multer = require('multer');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -28,6 +29,17 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.originalname + Date.now() + path.extname(file.originalname));
+  }
+})
+
+const upload = multer({ storage });
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -55,7 +67,7 @@ app.use('/listColors', listColorsRouter)
 app.use('/listBrand', listBrandRouter)
 
 // rotas refatoradas
-app.use('/veiculos', vehiclesRoutes);
+app.use('/veiculos', upload.single("imagem"), vehiclesRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

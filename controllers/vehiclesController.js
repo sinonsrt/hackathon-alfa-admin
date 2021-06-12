@@ -3,14 +3,14 @@ const { Vehicles } = require('../models')
 module.exports = {
 
     save: async (req, res) => {
-        console.log(req.body)
+        console.log(req.file.filename)
         let data = {
             modelo: req.body.modelo,
             anomodelo: req.body.anomodelo,
             anofabricacao: req.body.anofabricacao,
             valor: req.body.valor,
             tipo: req.body.tipo,
-            imagem: req.body.fotoDestaque,
+            foto: req.file.filename,
             destaque: req.body.destaque,
             opcionais: req.body.opcionais,
             marca_id: req.body.marca_id,
