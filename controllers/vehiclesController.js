@@ -10,7 +10,7 @@ module.exports = {
             anofabricacao: req.body.anofabricacao,
             valor: req.body.valor,
             tipo: req.body.tipo,
-            imagem: req.body.fotoDestaque,
+            foto: req.file.filename,
             destaque: req.body.destaque,
             opcionais: req.body.opcionais,
             marca_id: req.body.marca_id,
