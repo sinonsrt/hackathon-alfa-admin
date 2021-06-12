@@ -3,7 +3,7 @@ const { Vehicles } = require('../models')
 module.exports = {
 
     save: async (req, res) => {
-        console.log(req.file.filename)
+        
         let data = {
             modelo: req.body.modelo,
             anomodelo: req.body.anomodelo,
