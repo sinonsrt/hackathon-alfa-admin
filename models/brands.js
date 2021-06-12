@@ -4,7 +4,7 @@ const {
 } = require("sequelize");
 
 module.exports = (Sequelize, DataType) => {
-    const Brand = Sequelize.define('Brand', {
+    const Brands = Sequelize.define('brands', {
         id:{
           allowNull:false,
           primaryKey:true,
@@ -16,5 +16,5 @@ module.exports = (Sequelize, DataType) => {
           type: DataType.STRING(50)
         },
     })
-    return Brand
+    return Brands
 }

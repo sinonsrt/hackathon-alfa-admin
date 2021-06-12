@@ -4,7 +4,7 @@ const {
 } = require("sequelize");
 
 module.exports = (Sequelize, DataType) => {
-    const Vehicles = Sequelize.define('Vehicles', {
+    const Vehicles = Sequelize.define('vehicles', {
         id:{
           allowNull:false,
           primaryKey:true,

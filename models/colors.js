@@ -4,7 +4,7 @@ const {
 } = require("sequelize");
 
 module.exports = (Sequelize, DataType) => {
-    const Colors = Sequelize.define('Colors', {
+    const Colors = Sequelize.define('colors', {
         id:{
           allowNull:false,
           primaryKey:true,

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Vehicles', {
+    return queryInterface.createTable('vehicles', {
       id:{
         allowNull:false,
         primaryKey:true,
@@ -38,17 +38,17 @@ module.exports = {
       marca_id:{
         allowNull:false,
         type:Sequelize.INTEGER,
-        refereces: { model: 'brand', key: 'id'}
+        references: { model: 'brands', key: 'id'}
       },
       cor_id:{
         allowNull:false,
         type:Sequelize.INTEGER,
-        refereces: { model: 'colors', key: 'id'}
+        references: { model: 'colors', key: 'id'}
       },
       usuario_id:{
         allowNull:false,
         type:Sequelize.INTEGER,
-        refereces: { model: 'users', key: 'id'}
+        references: { model: 'users', key: 'id'}
       },
       opcionais:{
         allowNull:false,
