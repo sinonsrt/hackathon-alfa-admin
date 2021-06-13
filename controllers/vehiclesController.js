@@ -1,8 +1,12 @@
-const { Vehicles } = require('../models')
+const { Vehicles } = require('../models');
+
+const { uploadFile } = require('../config/s3');
 
 module.exports = {
 
     save: async (req, res) => {
+
+        const awsUpload = await uploadFile(req.file);
         
         let data = {
             modelo: req.body.modelo,
@@ -10,7 +14,7 @@ module.exports = {
             anofabricacao: req.body.anofabricacao,
             valor: req.body.valor,
             tipo: req.body.tipo,
-            foto: req.file.filename,
+            foto: awsUpload.Location,
             destaque: req.body.destaque,
             opcionais: req.body.opcionais,
             marca_id: req.body.marca_id,
