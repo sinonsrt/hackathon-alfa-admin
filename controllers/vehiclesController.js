@@ -6,10 +6,7 @@ module.exports = {
 
     save: async (req, res) => {
 
-        console.log(req.file);
-
         const awsUpload = await uploadFile(req.file);
-        console.log(awsUpload);
         
         let data = {
             modelo: req.body.modelo,
