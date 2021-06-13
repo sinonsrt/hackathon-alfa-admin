@@ -9,6 +9,7 @@
     "@popperjs/core": "^2.9.2",
     "aws-sdk": "^2.927.0",
     "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.5.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
@@ -22,6 +23,7 @@
     "sequelize": "^6.6.2"
   },
   "devDependencies": {
+    "@types/sequelize": "^4.28.9",
     "sequelize-cli": "^6.2.0"
   }
 }

@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include ../layouts/header %>
 </head>
+
 <body>
-    <h1>VEICULOS</h1>
+    <%- include ../layouts/navbar %>
+
+    <div class="container mt-5">
+
+        <h1 class="text-center">Veículos</h1>
+        
+        <div class="row my-3">
+            <div class="rol-8 form-group col-12">
+                <a href="cadastroVehicles" class="btn btn-dark float-end">Adicionar</a>
+            </div>
+        </div>
+
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Ano</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                    <th>Destaque?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let d of data) { %>
+                <tr>
+                    <td><%= d.id %></td>
+                    <td><%= d.modelo %></td>
+                    <td><%= d.marca %></td>
+                    <td><%= d.anofabricacao %>/<%= d.anomodelo %></td>
+                    <td>R$ <%= d.valor %></td>
+                    <td><%= d.tipo %></td>
+                    <td><%= d.destaque %></td>
+                    <td>
+                        <i class="pencil-fill"></i>
+                        <i class="trash-fill"></i>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <%- include ../layouts/footer %>
+
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        });
+    </script>
 </body>
 </html>
