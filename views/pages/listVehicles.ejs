@@ -9,12 +9,13 @@
     <%- include ../layouts/navbar %>
 
     <div class="container mt-5">
-
-        <h1 class="text-center">Veículos</h1>
         
         <div class="row my-3">
-            <div class="rol-8 form-group col-12">
-                <a href="cadastroVehicles" class="btn btn-dark float-end">Adicionar</a>
+            <div class="col">
+                <h2 class="text-start">Veículos</h2>
+            </div>
+            <div class="col-auto">
+                <a href="cadastroVehicles" class="btn btn-success float-end">Adicionar</a>
             </div>
         </div>
 
@@ -42,22 +43,20 @@
                     <td><%= d.tipo %></td>
                     <td><%= d.destaque %></td>
                     <td>
-                        <i class="pencil-fill"></i>
-                        <i class="trash-fill"></i>
+                        <button type="button" class="btn btn-outline-success">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
                     </td>
                 </tr>
                 <% } %>
             </tbody>
         </table>
-        
     </div>
 
     <%- include ../layouts/footer %>
 
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
-    </script>
 </body>
 </html>
