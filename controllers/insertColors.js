@@ -5,7 +5,6 @@ module.exports={
             cor: req.body.cor,
         }
         const result = await Colors.create(data)
-        console.log(data)
 
         res.redirect('/')
     }
