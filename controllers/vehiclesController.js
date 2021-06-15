@@ -25,5 +25,25 @@ module.exports = {
         const result = await Vehicles.create(data);
 
         res.redirect('/');
-    }
+    },
+
+    show: async(req, res) => {
+        const result = await Vehicles.findAll({
+            attributes: [
+                'id', 
+                'modelo', 
+                'anomodelo', 
+                'anofabricacao', 
+                'valor', 
+                'tipo', 
+                'foto', 
+                'destaque', 
+                'marca_id', 
+                'cor_id', 
+                'opcionais'
+            ]
+        });
+
+        res.render('pages/listVehicles', { data: result });
+    },
 }

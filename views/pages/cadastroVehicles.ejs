@@ -26,14 +26,12 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="cor" class="form-label">Cor</label>
-                            <select class="form-select" aria-label="Default select example" name="cor_id" id="cor" required>
-                                <option value="">Selecione</option>
-                                <option value="1">Branco</option>
-                                <option value="2">Prata</option>
-                            </select>
-                        </div>
+                        <label for="cor" class="form-label">Cor</label>
+                        <select class="form-select" aria-label="Default select example" name="cor_id" id="cor" required>
+                            <option value="">Selecione</option>
+                            <option value="1">Branco</option>
+                            <option value="2">Prata</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -62,17 +60,31 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="destaque" name="destaque">
-                    <label class="form-check-label" for="destaque">
-                      Veículo Destaque?
-                    </label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="tipo" class="form-label">Tipo</label>
+                        <select class="form-select" aria-label="Default select example" name="tipo" id="tipo" required>
+                            <option value="">Selecione</option>
+                            <option value="Novo">Novo</option>
+                            <option value="Semi-novo">Seminovo</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check align-baseline">
+                            <input class="form-check-input" type="checkbox" value="1" id="destaque" name="destaque">
+                            <label class="form-check-label" for="destaque">
+                              Veículo Destaque?
+                            </label>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
             <div class="mb-3">
                 <label for="opcionais" class="form-label">Opcionais</label>
-                    <textarea class="form-control" placeholder="Ex: Ar condicionado, Direção Elétrica, etc..." id="floatingTextarea2"
-                        style="height: 100px" name="opcionais" id="opcionais"></textarea>
+                <textarea class="form-control" placeholder="Ex: Ar condicionado, Direção Elétrica, etc..." id="floatingTextarea2"
+                    style="height: 100px" name="opcionais" id="opcionais">
+                </textarea>
             </div>
             <div class="mb-5">
                 <button type="submit" class="btn btn-success float-end">Salvar</button>
