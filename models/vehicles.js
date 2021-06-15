@@ -42,17 +42,17 @@ module.exports = (Sequelize, DataType) => {
         marca_id:{
           allowNull:false,
           type:DataType.INTEGER,
-          refereces: { model: 'brand', key: 'id'}
+          references: { model: 'Brands', key: 'id'}
         },
         cor_id:{
           allowNull:false,
           type:DataType.INTEGER,
-          refereces: { model: 'colors', key: 'id'}
+          references: { model: 'Colors', key: 'id'}
         },
         usuario_id:{
           allowNull:false,
           type:DataType.INTEGER,
-          refereces: { model: 'users', key: 'id'}
+          references: { model: 'Users', key: 'id'}
         },
         opcionais:{
           allowNull:true,
