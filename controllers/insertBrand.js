@@ -1,10 +1,10 @@
-const { Brand } = require('../models')
+const { Brands } = require('../models')
 module.exports={
     save:async (req, res) => {
-        let data = {
+        const data = {
             marca: req.body.marca,
         }
-        const result = await Brand.create(data)
+        const result = await Brands.create(data)
 
         res.redirect('/')
     }

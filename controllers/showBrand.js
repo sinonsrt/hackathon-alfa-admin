@@ -1,14 +1,14 @@
-const { Brand } = require('../models')
+const { Brands } = require('../models')
 
 module.exports={
     show:async( req, res ) => {
-        const result = await Brand.findAll({
+        const result = await Brands.findAll({
             attributes:['id', 'marca']
         })
         return res.json(result);
     },
     view:async ( req, res )=>{
-        const result=await Brand.findAll({
+        const result=await Brands.findAll({
             attributes:['id','marca']
         });
 
