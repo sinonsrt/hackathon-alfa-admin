@@ -57,6 +57,9 @@ app.use('/listBrand', listBrandRouter)
 // rotas refatoradas
 app.use('/veiculos', vehiclesRoutes);
 
+// rotas API
+app.use('/', vehiclesRoutes);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
