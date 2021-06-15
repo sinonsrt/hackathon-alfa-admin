@@ -11,6 +11,6 @@ module.exports = {
             where: { id: params }
         })
 
-        res.redirect('/');
+        res.redirect('listColors');
     },
 }

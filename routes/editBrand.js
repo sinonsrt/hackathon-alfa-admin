@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const atualizar = require('../controllers/updateBrand');
+const edit = require('../controllers/editBrand');
 
-router.post('/', atualizar.update);
+router.get('/:id', edit.show);
 
 module.exports = router;
