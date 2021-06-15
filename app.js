@@ -20,6 +20,7 @@ const listUsersRouter = require('./routes/listUsers')
 const listVehiclesRouter = require('./routes/listVehicles')
 const listColorsRouter = require('./routes/listColors')
 const listBrandRouter = require('./routes/listBrand')
+const loginAuthRouter=require('./routes/loginAuth');
 
 const vehiclesRoutes = require('./routes/vehicleRoutes');
 
@@ -53,6 +54,7 @@ app.use('/listUsers', listUsersRouter)
 app.use('/listVehicles', listVehiclesRouter)
 app.use('/listColors', listColorsRouter)
 app.use('/listBrand', listBrandRouter)
+app.use('/loginAuth', loginAuthRouter);
 
 // rotas refatoradas
 app.use('/veiculos', vehiclesRoutes);

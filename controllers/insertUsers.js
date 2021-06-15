@@ -1,13 +1,26 @@
-const { Users } = require('../models')
-module.exports={
-    save:async (req, res) => {
-        let data = {
-            nome: req.body.nome,
-            login: req.body.login,
-            senha: req.body.senha
-        }
-        const result = await Users.create(data)
+const {
+    Users
+} = require('../models')
+const bcrypt = require('bcryptjs');
 
-        res.redirect('/')
+module.exports = {
+    save: async (req, res) => {
+        try {
+            const password = req.body.senha;
+            const crypt = bcrypt.genSaltSync(10);
+            const dirtyPassword = bcrypt.hashSync(password, crypt);
+
+            const data = {
+                nome: req.body.nome,
+                login: req.body.login,
+                senha: dirtyPassword
+            }
+            const result = await Users.create(data)
+
+            res.redirect('/')   
+        } catch (error) {
+            console.log('deu rro')
+            console.log(error)
+        }
     }
 }
