@@ -22,29 +22,39 @@
                         <label for="marca" class="form-label">Marca</label>
                         <select class="form-select" aria-label="Default select example" name="marca_id" id="marca" required>
                             <option value="">Selecione</option>
-                            <option value="1">Volkswagen</option>
-                            <option value="2">Chevrolet</option>
+                            <% for(let b of brands) { %>
+                            <option value="<%= b.id %>"><%= b.marca %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div class="col-md-6">
                         <label for="cor" class="form-label">Cor</label>
                         <select class="form-select" aria-label="Default select example" name="cor_id" id="cor" required>
                             <option value="">Selecione</option>
-                            <option value="1">Branco</option>
-                            <option value="2">Prata</option>
+                            <% for(let c of colors) { %>
+                            <option value="<%= c.id %>"><%= c.cor %></option>
+                            <% } %>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="mb-3">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <label for="anofabricacao" class="form-label">Ano Fabricação</label>
+                        <input type="text" class="form-control col-md-5" name="anofabricacao" id="anofabricacao" required>
+                    </div>
+                    <div class="col-md-4">
                         <label for="anomodelo" class="form-label">Ano Modelo</label>
                         <input type="text" class="form-control col-md-5" name="anomodelo" id="anomodelo" required>
                     </div>
-                    <div class="col-md-6">
-                        <label for="anofabricacao" class="form-label">Ano Fabricação</label>
-                        <input type="text" class="form-control col-md-5" name="anofabricacao" id="anofabricacao" required>
+                    <div class="col-md-4">
+                        <label for="tipo" class="form-label">Tipo</label>
+                        <select class="form-select" aria-label="Default select example" name="tipo" id="tipo" required>
+                            <option value="">Selecione</option>
+                            <option value="Novo">Novo</option>
+                            <option value="Semi-novo">Semi-novo</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -63,14 +73,6 @@
             <div class="mb-3">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="tipo" class="form-label">Tipo</label>
-                        <select class="form-select" aria-label="Default select example" name="tipo" id="tipo" required>
-                            <option value="">Selecione</option>
-                            <option value="Novo">Novo</option>
-                            <option value="Semi-novo">Seminovo</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
                         <div class="form-check align-baseline">
                             <input class="form-check-input" type="checkbox" value="1" id="destaque" name="destaque">
                             <label class="form-check-label" for="destaque">
@@ -79,13 +81,11 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div class="mb-3">
                 <label for="opcionais" class="form-label">Opcionais</label>
-                <textarea class="form-control" placeholder="Ex: Ar condicionado, Direção Elétrica, etc..." id="floatingTextarea2"
-                    style="height: 100px" name="opcionais" id="opcionais">
-                </textarea>
+                <textarea class="form-control" placeholder="Ex: Ar condicionado, airbag, etc..." id="floatingTextarea2"
+                    style="height: 100px" name="opcionais" id="opcionais"></textarea>
             </div>
             <div class="mb-5">
                 <button type="submit" class="btn btn-success float-end">Salvar</button>

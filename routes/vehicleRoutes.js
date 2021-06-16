@@ -9,6 +9,9 @@ const upload = multer(multerConfig);
 
 router.get('/', vehicles.show);
 router.post('/salvar', upload.single('imagem'), vehicles.save);
+router.post('/atualizar/:id', vehicles.update);
+router.get('/editar/:id', vehicles.edit);
+router.get('/excluir/:id', vehicles.destroy);
 
 // Rotas API
 router.get('/api/v1/veiculos', apiController.getDestaques);
