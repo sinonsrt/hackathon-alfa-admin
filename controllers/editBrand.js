@@ -2,9 +2,9 @@ const { Brands } = require('../models');
 
 module.exports = {
     show:async(req, res)=>{
-        const param = req.params.id;
+        const params = req.params.id;
         const result = await Brands.findOne({
-            where: { id:param },
+            where: { id: params },
             attributes: [ 'id', 'marca' ]
         });
         console.log(result)

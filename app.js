@@ -26,6 +26,9 @@ const editBrandRouter = require('./routes/editBrand');
 const atualizarUsersRouter = require('./routes/atualizarUsers');
 const atualizarColorsRouter = require('./routes/atualizarColors');
 const atualizarBrandRouter = require('./routes/atualizarBrand');
+const excluirBrandRouter = require('./routes/destroyBrand');
+const excluirColorsRouter = require('./routes/destroyColors');
+const excluirUsersRouter = require('./routes/destroyUsers');
 
 const vehiclesRoutes = require('./routes/vehicleRoutes');
 
@@ -67,6 +70,10 @@ app.use('/editBrand', editBrandRouter)
 app.use('/atualizarUsers', atualizarUsersRouter)
 app.use('/atualizarColors', atualizarColorsRouter)
 app.use('/atualizarBrand', atualizarBrandRouter)
+app.use('/excluirBrand', excluirBrandRouter)
+app.use('/excluirColors', excluirColorsRouter)
+app.use('/excluirUsers', excluirUsersRouter)
+
 
 // rotas refatoradas
 app.use('/veiculos', vehiclesRoutes);
