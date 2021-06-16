@@ -74,8 +74,6 @@ app.use('/excluirBrand', excluirBrandRouter)
 app.use('/excluirColors', excluirColorsRouter)
 app.use('/excluirUsers', excluirUsersRouter)
 
-
-// rotas refatoradas
 app.use('/veiculos', vehiclesRoutes);
 
 // rotas API

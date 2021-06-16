@@ -35,8 +35,8 @@
             </thead>
             <tbody>
                 <% for(let d of data) { %>
-                <tr>
-                    <td><%= d.id %></td>
+                <tr class="align-middle">
+                    <td><img src="<%= d.foto %>" alt="<%= d.modelo %>" style="width: 80px;"></td>
                     <td><%= d.modelo %></td>
                     <td><%= d.marca %></td>
                     <td><%= d.anofabricacao %>/<%= d.anomodelo %></td>
@@ -45,12 +45,12 @@
                     <td><%= d.tipo %></td>
                     <td><%= d.destaque ? 'Sim' : 'Não' %></td>
                     <td>
-                        <button type="button" class="btn btn-outline-success">
+                        <a href="/veiculos/editar/<%= d.id %>" type="button" class="btn btn-success">
                             <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline-danger">
+                        </a>
+                        <a href="/veiculos/excluir/<%= d.id %>" type="button" class="btn btn-danger">
                             <i class="fas fa-trash-alt"></i>
-                        </button>
+                        </a>
                     </td>
                 </tr>
                 <% } %>
