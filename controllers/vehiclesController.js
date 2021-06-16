@@ -1,8 +1,10 @@
 const {
     Vehicles,
     Colors,
-    Brands
+    Brands,
+    sequelize
 } = require('../models');
+const { QueryTypes } = require('sequelize');
 
 const {
     uploadFile
@@ -34,37 +36,17 @@ module.exports = {
     },
 
     show: async (req, res) => {
-        const result = await Vehicles.findAll({
-            attributes: [
-                'id',
-                'modelo',
-                'anomodelo',
-                'anofabricacao',
-                'valor',
-                'tipo',
-                'foto',
-                'destaque',
-                'marca_id',
-                'cor_id',
-                'opcionais'
-            ]
-        });
+        const result = await sequelize.query(
+            `SELECT *
+                FROM Vehicles v 
+                INNER JOIN Brands b ON v.marca_id = b.id
+                INNER JOIN Colors c ON v.cor_id = c.id
+            `,{ type: QueryTypes.SELECT }
+        )
+        console.log(result)
 
-        const colorsResult = await Colors.findAll({
-            where: {
-                id: result.cor_id || 0
-            }
-        })
-        const brandsResult = await Brands.findAll({
-            where: {
-                id: result.marca_id || 0
-            }
-        });
-    
         res.render('pages/listVehicles', {
-            data: result,
-            brand: brandsResult,
-            colors: colorsResult
+            data: result
         });
     },
 }

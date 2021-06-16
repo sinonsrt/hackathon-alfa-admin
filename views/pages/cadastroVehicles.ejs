@@ -38,13 +38,21 @@
             </div>
             <div class="mb-3">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <label for="anofabricacao" class="form-label">Ano Fabricação</label>
+                        <input type="text" class="form-control col-md-5" name="anofabricacao" id="anofabricacao" required>
+                    </div>
+                    <div class="col-md-4">
                         <label for="anomodelo" class="form-label">Ano Modelo</label>
                         <input type="text" class="form-control col-md-5" name="anomodelo" id="anomodelo" required>
                     </div>
-                    <div class="col-md-6">
-                        <label for="anofabricacao" class="form-label">Ano Fabricação</label>
-                        <input type="text" class="form-control col-md-5" name="anofabricacao" id="anofabricacao" required>
+                    <div class="col-md-4">
+                        <label for="tipo" class="form-label">Tipo</label>
+                        <select class="form-select" aria-label="Default select example" name="tipo" id="tipo" required>
+                            <option value="">Selecione</option>
+                            <option value="Novo">Novo</option>
+                            <option value="Semi-novo">Seminovo</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -63,14 +71,6 @@
             <div class="mb-3">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="tipo" class="form-label">Tipo</label>
-                        <select class="form-select" aria-label="Default select example" name="tipo" id="tipo" required>
-                            <option value="">Selecione</option>
-                            <option value="Novo">Novo</option>
-                            <option value="Semi-novo">Seminovo</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
                         <div class="form-check align-baseline">
                             <input class="form-check-input" type="checkbox" value="1" id="destaque" name="destaque">
                             <label class="form-check-label" for="destaque">
@@ -79,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
             <div class="mb-3">
                 <label for="opcionais" class="form-label">Opcionais</label>
