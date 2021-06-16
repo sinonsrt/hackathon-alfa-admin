@@ -4,5 +4,4 @@ const find = require('../controllers/showBrand')
 
 router.get('/', find.view)
 
-
 module.exports=router;
