@@ -6,6 +6,6 @@ module.exports={
         }
         const result = await Colors.create(data)
 
-        res.redirect('/')
+        res.redirect('pages/listColors')
     }
 }
