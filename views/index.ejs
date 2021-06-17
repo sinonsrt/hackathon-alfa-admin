@@ -15,7 +15,7 @@
                         <div class="card text-dark bg-light mb-3">
                             <div class="card-header">Veículos Novos</div>
                             <div class="card-body">
-                                <h1 class="text-center display-3">
+                                <h1 class="text-center display-4">
                                     <%= data.novos.novos %>
                                 </h1>
                             </div>
@@ -23,9 +23,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card text-dark bg-light mb-3">
-                            <div class="card-header">Veículos Usados</div>
+                            <div class="card-header">Veículos Seminovos</div>
                             <div class="card-body">
-                                <h1 class="text-center display-3">
+                                <h1 class="text-center display-4">
                                     <%= data.seminovos.seminovos %>
                                 </h1>
                             </div>
@@ -35,7 +35,7 @@
                         <div class="card text-dark bg-light mb-3">
                             <div class="card-header">Veículos Destaque</div>
                             <div class="card-body">
-                                <h1 class="text-center display-3"><%= data.destaques.destaques %></h1>
+                                <h1 class="text-center display-4"><%= data.destaques.destaques %></h1>
                             </div>
                         </div>
                     </div>
@@ -49,6 +49,7 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th scope="col">Modelo</th>
                                             <th scope="col">Marca</th>
                                             <th scope="col">Ano</th>
@@ -56,24 +57,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
+                                        <% for(let v of data.ultimos) { %>
+                                        <tr class="align-middle">
+                                            <td><img src="<%= v.foto %>" alt="<%= v.modelo %>" style="width: 80px;"></td>
+                                            <td><%= v.modelo %></td>
+                                            <td><%= v.marca %></td>
+                                            <td><%= v.anofabricacao %>/<%= v.anomodelo %></td>
+                                            <td><%= (v.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL', minimumFractionDigits: 0})) %></td>
                                         </tr>
-                                        <tr>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@mdo</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>@mdo</td>
-                                            <td>Larry the Bird</td>
-                                            <td>@mdo</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                        <% } %>
                                     </tbody>
                                 </table>
                             </div>
@@ -81,28 +73,22 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card text-dark bg-light mb-3">
-                            <div class="card-header">Usuários cadastrados</div>
+                            <div class="card-header">Estoque Marcas</div>
                             <div class="card-body">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Login</th>
+                                            <th scope="col">Marca</th>
+                                            <th scope="col">Qtde</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <% for(let m of data.marcas) { %>
                                         <tr>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <td><%= m.marca %></td>
+                                            <td><%= m.qtde %></td>
                                         </tr>
-                                        <tr>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>@fat</td>
-                                            <td>@twitter</td>
-                                        </tr>
+                                        <% } %>
                                     </tbody>
                                 </table>
                             </div>

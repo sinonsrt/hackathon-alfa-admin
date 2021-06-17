@@ -33,13 +33,31 @@ router.get('/', async function (req, res, next) {
 		`, { type: QueryTypes.SELECT }
 	)
 
+	const ultimos = await sequelize.query(
+		`SELECT v.id, v.modelo, v.anofabricacao, v.anomodelo, v.valor, v.foto,
+			v.tipo, v.destaque, b.marca, c.cor
+			FROM Vehicles v 
+			INNER JOIN Brands b ON v.marca_id = b.id
+			INNER JOIN Colors c ON v.cor_id = c.id
+			ORDER BY v.id LIMIT 3
+		`,{ type: QueryTypes.SELECT }
+	)
+
+	const marcas = await sequelize.query(
+		`SELECT COUNT(*) as qtde, b.marca
+			FROM Vehicles v 
+			INNER JOIN Brands b ON v.marca_id = b.id
+			GROUP BY marca
+		`, { type: QueryTypes.SELECT }
+	)
+
 	const data = {
 		novos,
 		seminovos,
-		destaques
+		destaques,
+		ultimos,
+		marcas
 	}
-
-	console.log(data)
 
 	res.render('index', {data});
 
