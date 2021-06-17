@@ -3,5 +3,20 @@ body {
   background-color: #F5F5F5;
 }
 
-nav {
+.btn-login {
+  background-color: #da5c5c;
+  outline: none;
+  border: 0px;
+}
+
+.btn-login:hover {
+  background-color: #be4c4c;
+}
+
+.img-login {
+  background-color: #000000;
+  background-image: url("../assets/ferrari.jpeg");
+  background-position: center;
+  filter: brightness(.5);
+  object-fit: cover;
 }

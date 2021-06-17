@@ -9,11 +9,17 @@
     <%- include ../layouts/navbar %>
 
     <div class="container mt-5">
-        <table class="table">
-            <h1 class="text-center">Cores</h1>
+
+        <div class="row my-3">
+            <div class="col">
+                <h2 class="text-start">Cores</h2>
+            </div>
             <div class="col-auto">
                 <a href="cadastroColors" class="btn btn-success float-end">Adicionar</a>
             </div>
+        </div>
+
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -23,12 +29,12 @@
             </thead>
             <tbody>
                 <% for(let d of data) {%>
-                <tr>
-                    <th scope="row"><%= d.id %></th>
+                <tr class="align-middle">
+                    <td scope="row"><%= d.id %></td>
                     <td><%= d.cor %></td>
-                    <td>
-                        <a href="editColors/<%=d.id%>" class="btn btn-success">Editar</a>
-                        <a href="excluirColors/<%=d.id%>" class="btn btn-danger">Excluir</a>
+                    <td class="col-auto">
+                        <a href="editColors/<%=d.id%>" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="excluirColors/<%=d.id%>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
                 <% } %>
