@@ -13,6 +13,6 @@ module.exports = {
             where: { id: params }
         })
 
-        res.redirect('listUsers');
+        res.redirect('/listUsers');
     },
 }

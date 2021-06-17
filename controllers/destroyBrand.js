@@ -7,6 +7,6 @@ module.exports = {
             where:{ id: params }
         })
         
-        res.redirect('listBrand');
+        res.redirect('/listBrand');
     }
 }
