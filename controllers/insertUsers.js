@@ -16,6 +16,6 @@ module.exports = {
         }
         const result = await Users.create(data)
 
-        res.redirect('pages/listUsers')
+        res.redirect('listUsers')
     }
 }
