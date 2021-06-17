@@ -6,6 +6,6 @@ module.exports={
         }
         const result = await Brands.create(data)
 
-        res.redirect('pages/listBrand')
+        res.redirect('listBrand')
     }
 }

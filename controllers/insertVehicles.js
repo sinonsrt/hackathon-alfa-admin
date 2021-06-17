@@ -20,6 +20,6 @@ module.exports = {
         
         const result = await Vehicles.create(data);
 
-        res.redirect('pages/listVehicles');
+        res.redirect('listVehicles');
     }
 }
