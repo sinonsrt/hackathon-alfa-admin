@@ -7,6 +7,6 @@ module.exports = {
             where:{ id: params }
         })
         
-        res.render('listColors');
+        res.redirect('listColors');
     }
 }
